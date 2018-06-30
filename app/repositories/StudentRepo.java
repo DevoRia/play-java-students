@@ -9,11 +9,11 @@ import java.util.List;
 public class StudentRepo implements Repository{
 
     @Inject
-    JPAApi jpa;
+    private JPAApi jpa;
 
     @Override
-    public List<Model> findAll() {
-        return null;
+    public List findAll() {
+        return jpa.withTransaction(entityManager -> entityManager.createQuery("select s from Student s").getResultList());
     }
 
     @Override

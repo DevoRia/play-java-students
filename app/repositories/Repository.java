@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface Repository {
 
-    List<Model> findAll();
+    List findAll();
     void save (Model model);
     void edit (Model model);
     void remove (Model model);
