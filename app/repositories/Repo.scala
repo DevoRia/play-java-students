@@ -15,5 +15,5 @@ class Repo @Inject()(jpa: JPAApi) extends Repository{
 
   override def remove(model: Model): Unit = jpa.withTransaction(em => em.remove(em.merge(model)))
 
-  def findById(id: Int): Model = jpa.withTransaction(_.createQuery("SELECT s FROM Student s WHERE idstudent = :id").setParameter("id", id).getResultList.get(0))
+  def findById(id: Int): Any = jpa.withTransaction(_.createQuery("SELECT s FROM Student s WHERE idstudent = :id").setParameter("id", id).getResultList.get(0))
 }
