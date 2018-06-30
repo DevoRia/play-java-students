@@ -1,19 +1,23 @@
 package controllers;
 
+import models.Student;
+import play.libs.Json;
 import play.mvc.*;
 
-import repositories.StudentRepo;
-import views.html.*;
+import services.DataService;
+
+import java.util.*;
 
 import javax.inject.Inject;
 
 public class HomeController extends Controller {
 
     @Inject
-    StudentRepo repo;
+    DataService dataService;
 
     public Result index() {
-        return ok(repo.findAll().toString());
+        List content = dataService.findAll();
+        return ok(Json.toJson(content));
     }
 
 }

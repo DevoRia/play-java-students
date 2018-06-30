@@ -19,6 +19,13 @@ public class Student implements Model{
     @Column(name = "\"group\"")
     private int group;
 
+    public Student () {}
+
+    public Student(String name, int group) {
+        this.name = name;
+        this.group = group;
+    }
+
     public int getId() {
         return id;
     }
