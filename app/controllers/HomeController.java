@@ -43,7 +43,7 @@ public class HomeController extends Controller {
     }
 
     public Result remove(String id) {
-       // dataService.remove();
+        dataService.remove(dataService.findById(Integer.parseInt(id)));
         return ok("Success");
     }
 

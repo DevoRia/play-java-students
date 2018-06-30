@@ -1,6 +1,7 @@
 package services;
 
 import models.Model;
+import models.Student;
 import repositories.Repo;
 
 import javax.inject.Inject;
@@ -25,5 +26,9 @@ public class DataService {
 
     public void remove(Model model) {
         repo.remove(model);
+    }
+
+    public Student findById(int id) {
+        return (Student) repo.findById(id);
     }
 }
