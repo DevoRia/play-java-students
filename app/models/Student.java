@@ -26,6 +26,12 @@ public class Student implements Model{
         this.group = group;
     }
 
+    public Student(int id, String name, int group) {
+        this.id = id;
+        this.name = name;
+        this.group = group;
+    }
+
     public int getId() {
         return id;
     }
